@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PopupDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-Td-Vga">
+                                <rect key="frame" x="169" y="136" width="76" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="mH9-cg-2nT"/>
+                                    <constraint firstAttribute="height" constant="49" id="xuz-kL-SsG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="15J-Vr-DYJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jLT-Td-Vga" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="gfS-Bm-LPi"/>
+                            <constraint firstItem="jLT-Td-Vga" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gkM-SG-l8v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="zc3-hb-AtP" kind="popoverPresentation" identifier="segue1" popoverAnchorView="jLT-Td-Vga" id="Qw7-Pl-unE">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="ft5-fZ-saK">
+            <objects>
+                <viewController id="zc3-hb-AtP" customClass="PopUpViewController" customModule="PopupDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMC-EP-St5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Canada Fan" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-Cp-nH0">
+                                <rect key="frame" x="110.5" y="127" width="193" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="SkZ-GE-8Kf"/>
+                                    <constraint firstAttribute="width" constant="193" id="pMc-ZE-dWj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCY-pM-fPw">
+                                <rect key="frame" x="111.5" y="55" width="191" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="ufm-Zk-XTJ"/>
+                                    <constraint firstAttribute="height" constant="31" id="yQc-Bo-neC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-x7-s0w">
+                                <rect key="frame" x="126" y="299" width="162" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="TBr-QJ-9yJ"/>
+                                    <constraint firstAttribute="height" constant="41" id="pDk-HV-bmA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="zc3-hb-AtP" eventType="touchUpInside" id="iga-WU-vLM"/>
+                                    <segue destination="UHO-KV-CJU" kind="unwind" unwindAction="returnedWithSegue:" id="Q20-bi-ZAt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="foD-rx-3if" firstAttribute="bottom" secondItem="lb3-x7-s0w" secondAttribute="bottom" constant="60" id="G4i-5h-opc"/>
+                            <constraint firstItem="BEX-Cp-nH0" firstAttribute="top" secondItem="zCY-pM-fPw" secondAttribute="bottom" constant="41" id="SqV-0H-8sd"/>
+                            <constraint firstItem="BEX-Cp-nH0" firstAttribute="centerX" secondItem="eMC-EP-St5" secondAttribute="centerX" id="W1r-7B-Hnb"/>
+                            <constraint firstItem="zCY-pM-fPw" firstAttribute="centerX" secondItem="eMC-EP-St5" secondAttribute="centerX" id="hnB-ug-Hvz"/>
+                            <constraint firstItem="zCY-pM-fPw" firstAttribute="top" secondItem="foD-rx-3if" secondAttribute="top" constant="11" id="rQh-r6-Ils"/>
+                            <constraint firstItem="lb3-x7-s0w" firstAttribute="centerX" secondItem="eMC-EP-St5" secondAttribute="centerX" id="zxo-Hv-Ws7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="foD-rx-3if"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="400"/>
+                    <connections>
+                        <outlet property="textField" destination="BEX-Cp-nH0" id="W5i-2w-cfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3E-XW-fcY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UHO-KV-CJU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="847.82608695652175" y="136.60714285714286"/>
+        </scene>
+    </scenes>
+</document>
